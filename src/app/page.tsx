@@ -1,38 +1,77 @@
+import { SkillCard } from "../components/skill-card/skill-card";
+import { WorkCard } from "../components/work-card/work-card";
 import { MainLayout } from "../layouts/main/main-layout";
+
+const skills = [
+  {
+    title: "Next.js",
+    description: "ページ作成、ルーティング、コンポーネント分割を練習しています。",
+  },
+  {
+    title: "Tailwind CSS",
+    description: "classNameを使って、余白、色、レイアウトを調整できます。",
+  },
+  {
+    title: "GitHub",
+    description: "ブランチ、コミット、push、PR作成を練習しています。",
+  },
+  {
+  title: "TypeScript",
+  description: "型を使って、コードのミスに早く気づけるようにします。",
+  },
+];
+const works = [
+  {
+    title: "Portfolio Site",
+    description: "自分のプロフィール、スキル、制作物をまとめるサイトです。",
+    href: "#",
+  },
+  {
+    title: "Todo App",
+    description: "タスクの追加、完了、削除ができる練習用アプリです。",
+    href: "#",
+  },
+];
 
 export default function Home() {
   return (
-    <main>
-      <MainLayout>
-        <section className='mx-auto flex min-h-screen w-full max-w-5xl flex-col justify-center px-6 py-20'>
-          <p className='mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-sky-500'>
-            Portfolio
+    <MainLayout>
+      <div className='mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 py-10'>
+        <section className='rounded-2x2 bg-neutral-950 px-10 py-15 text-white'>
+          <p className='text-sm font-bold text-sky-300'>Portfolio</p>
+          <h1 className='mt-4 text-4xl font-bold'>Hello,World I am Riki Maeda</h1>
+          <p className='mt-4 max-w-2xl text-neutral-300'>
+            Next.jsとTailwind CSSを使って、ポートフォリオを作っています。
           </p>
-          <h1 className='max-w-3xl text-4xl font-bold leading-tight sm:text-6xl'>
-            Hi, I&apos;m Riki Maeda.
-            <br />
-            Webを学びながら、使いやすいものを作っています。
-          </h1>
-          <p className='mt-6 max-w-2xl text-base leading-8 text-neutral-600 dark:text-neutral-300'>
-            デザインとコードの両方を少しずつ磨きながら、見る人に伝わるポートフォリオを育てています。
-            ここでは制作物、学んだこと、これから挑戦したいことをまとめていきます。
-          </p>
-          <div className='mt-10 flex flex-wrap gap-3'>
-            <a
-              href='/project'
-              className='rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background transition hover:opacity-80'
-            >
-              View Projects
-            </a>
-            <a
-              href='/about'
-              className='rounded-full border border-foreground/20 px-5 py-3 text-sm font-semibold transition hover:bg-foreground/10'
-            >
-              About Me
-            </a>
+        </section>
+
+        <section id='skills'>
+          <h2 className='text-2xl font-bold text-neutral-900'>Skills</h2>
+          <div className='mt-6 grid gap-8 md:grid-cols-3'>
+            {skills.map((skill) => (
+              <SkillCard
+                key={skill.title}
+                title={skill.title}
+                description={skill.description}
+              />
+            ))}
           </div>
         </section>
-      </MainLayout>
-    </main>
+        <section id='works'>
+          <h2 className='text-2xl font-bold text-neutral-900'>Works</h2>
+          <div className='mt-6 grid gap-4 md:grid-cols-2'>
+            {works.map((work) => (
+              <WorkCard
+                key={work.title}
+                title={work.title}
+                description={work.description}
+                href={work.href}
+              />
+            ))}
+          </div>
+        </section>
+
+      </div>
+    </MainLayout>
   );
 }
