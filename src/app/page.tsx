@@ -39,7 +39,7 @@ export default function Home() {
       <div className='mx-auto flex w-full max-w-5xl flex-col gap-20 px-5 py-10'>
         <section className='rounded-2x2 bg-neutral-950 px-10 py-15 text-white'>
           <p className='text-sm font-bold text-sky-300'>Portfolio</p>
-          <h1 className='mt-4 text-4xl font-bold'>Hello,World I am Riki Maeda</h1>
+          <h1 className='mt-4 text-4xl font-bold'>Hello,World I am Taisei Okada</h1>
           <p className='mt-4 max-w-2xl text-neutral-300'>
             Next.jsとTailwind CSSを使って、ポートフォリオを作っています。
           </p>

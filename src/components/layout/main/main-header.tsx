@@ -7,7 +7,7 @@ export const MainHeader = () => {
         <a href='/about'>About</a>
         <a href='/project'>Project</a>
         <a href='/links'>Links</a>
-        <a href='/Play'>Play</a>
+        <a href='/play'>Play</a>
        </nav>
       </div>
     </header>
